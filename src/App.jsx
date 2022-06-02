@@ -5,6 +5,7 @@ import Quiz from "./Quiz";
 import MainLayout from "./MainLayout";
 import NotFound from "./NotFound";
 import AssignmentDetails from "./AssignmentDetails";
+import ProfilePage from "./ProfilePage";
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
@@ -20,7 +21,7 @@ function App() {
       <Route path="/" element={<MainLayout />} >
         <Route path="assignments" element={<AssignmentList />} />
         <Route path="assignments/:assignmentNumber/Details" element={<AssignmentDetails />} />
-
+        <Route path="profile" element={<ProfilePage />} />
         <Route path="lechures" element={<LectureList />} />
       </Route>
     </Routes>
