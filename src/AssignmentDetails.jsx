@@ -1,17 +1,41 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import axios from 'axios';
 
-const AssignmentDetails = () => {
+function AssignmentDetail() {
 
     const data = useParams();
 
-    return (
+    console.log(data);
 
-        <div className="h-full bg-pink-500 flex justify-center items-center">
-            <h1 className="text-3xl text-white">Details of assignment number {data.assignmentNumber}</h1>
-        </div>
 
-    )
+    const [assignmentDetails, setAssignmentDetails] = useState([]);
+
+    useEffect(() => {
+      const token = axios.get(`https://api.codeyogi.io/assignments/:assignmentId`,{
+        withCredentials: true,
+      } );
+  
+      token.then((response) => {
+  
+        console.log('response aa gya assignments ');
+        console.log(response.data);
+        setAssignmentDetails(response.data);
+      });
+  
+    }, []);
+
+
+    // https://api.codeyogi.io/assignments/:assignmentId 
+
+  return (
+
+    <div className="h-screen  flex justify-center items-center">
+
+      <h1 className="text-5xl">Details  to Assignments Number {data.assignmentNumber} </h1>
+    </div>
+
+  );
 }
 
-export default AssignmentDetails
+export default AssignmentDetail;
