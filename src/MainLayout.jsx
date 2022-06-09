@@ -9,7 +9,7 @@ const MainLayout = () => {
 
             <Sidebar />
 
-            <div className="p-2 bg-yellow-500 grow">
+            <div className=" px-8 py-16 bg-gray-200 grow">
                 <Outlet />
             </div>
         </div>
