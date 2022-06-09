@@ -1,12 +1,14 @@
 import React from 'react'
+import QuizTitleBar from "./custemTags/QuizTitleBar";
 
 const Quiz = () => {
   return (
-    
-      <div className="h-screen bg-img flex justify-center items-center">
-      <h1 className="text-xl">No Active Question</h1>
-    </div>
-    
+    <>
+      <QuizTitleBar />
+      <div className="h-screen flex justify-center items-center">
+        <h1 className="text-xl">No Active Question</h1>
+      </div>
+    </>
   )
 }
 
